@@ -6,7 +6,7 @@ source config.sh
 
 dx upload update_chr.r --destination="${project}:/data/plink/" -p
 
-for chr in {1..21}
+for chr in {1..22}
 do
 cmd="
 # Get the list of variants that pass the threshold
