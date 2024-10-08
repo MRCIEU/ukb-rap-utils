@@ -10,7 +10,7 @@ dx rm ${project}:${datadir}/ld_regions_hg38.tsv
 dx upload ld_regions_hg38.tsv --destination="${project}:${datadir}/" -p
 dx rm ${project}:${datadir}/run.sh
 dx upload run.sh --destination="${project}:${datadir}/" -p
-
+chr=22
 for chr in {1..22}
 do
     dx run swiss-army-knife \

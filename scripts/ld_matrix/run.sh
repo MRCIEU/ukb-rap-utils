@@ -1,8 +1,11 @@
 #!/bin/bash
 
+set -e
+
 chr=$1
 
-wget https://s3.amazonaws.com/plink2-assets/plink2_linux_avx2_20240818.zip && unzip plink2_linux_avx2_20240818.zip && rm plink2_linux_avx2_20240818.zip
+zf="plink2_linux_avx2_20241004.zip"
+wget https://s3.amazonaws.com/plink2-assets/$zf && unzip $zf && rm $zf
 
 ancs=$(sed 1d /mnt/project/data/ldmatrix/ld_regions_hg38.tsv | awk '{print $4}' | sort | uniq | tr '\n' ' ')
 ancs=(`echo $ancs`)
@@ -37,7 +40,7 @@ do
 
         ./plink2 \
             --bfile ${anc}/${chr}/${start}-${end} \
-            --r-unphased square \
+            --r-unphased square ref-based \
             --keep-allele-order \
             --out ${anc}/${chr}/${start}-${end}
 
