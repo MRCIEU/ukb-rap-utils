@@ -1,6 +1,24 @@
 library(parallel)
 library(data.table)
 
+
+# Generate LD matrices from region bfiles
+# for(i in 1:22) {
+#     fn <- list.files(file.path("/local-scratch/projects/genotype-phenotype-map/data/ld_reference_panel_hg38/EUR", i), full.names=TRUE) %>% 
+#     grep("bed$", ., value=TRUE) %>% gsub(".bed", "", .)
+#     for(f in fn) {
+#         if(file.exists(glue("{f}.unphased.vcor1")))
+#         {
+#             file.copy(glue("{f}.unphased.vcor1"), glue("{f}.old.unphased.vcor1"))
+#         }
+#         cmd <- glue("plink2 --bfile {f} --r-unphased square ref-based --keep-allele-order --out {f}")
+
+#         cmd %>% system()
+#     }
+# }
+
+
+
 for(i in 1:22) {
     fn <- list.files(file.path("/local-scratch/projects/genotype-phenotype-map/data/ld_reference_panel_hg38/EUR", i), full.names=TRUE) %>% 
     grep("bed$", ., value=TRUE) %>% gsub(".bed", "", .)
