@@ -9,6 +9,7 @@ ancs=$(sed 1d /mnt/project/data/ldmatrix2/missing_blocks.txt | awk '{print $4}' 
 ancs=(`echo $ancs`)
 
 for chr in {1..22}
+do
     for anc in ${ancs[@]}
     do
         head -n 50000 /mnt/project/data/ancestry/king/ids_${anc}.fam > ids_${anc}_keep.fam
