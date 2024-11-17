@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 zf="plink2_linux_avx2_20241114.zip"
 wget https://s3.amazonaws.com/plink2-assets/alpha6/$zf && unzip $zf && rm $zf
 
