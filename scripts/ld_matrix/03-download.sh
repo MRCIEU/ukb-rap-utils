@@ -2,9 +2,9 @@
 
 source config.sh
 
-dx download "${project}:${datadir}/missing_blocks.txt"
+dx download "${project}:${datadir}/missing_blocks2.txt"
 
-grep EUR missing_blocks.txt > EUR_missing_blocks.txt
+grep EUR missing_blocks2.txt > EUR_missing_blocks.txt
 nmiss=$(cat EUR_missing_blocks.txt | wc -l)
 echo $nmiss
 mkdir -p missing
